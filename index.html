@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpinPick - Navbar</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script> -->
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="fas fa-spinner spinner-icon"></i> Spinster</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#customizeModal">
+                            <i class="fas fa-palette"></i> Customize
+                        </a>
+                    </li>
+                    <!-- Customize Modal -->
+                    <div class="modal fade" id="customizeModal" tabindex="-1" aria-labelledby="customizeModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content" style="background-color: #1e1e1e; color: white;">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="customizeModalLabel">During Spin</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <label class="form-label">Sound</label>
+                                    <select class="form-select">
+                                        <option>Ticking sound</option>
+                                        <option>Beep sound</option>
+                                        <option>Silent</option>
+                                    </select>
+
+                                    <label class="form-label mt-3">Volume</label>
+                                    <input type="range" class="form-range" min="0" max="100" value="50">
+
+                                    <div class="form-check mt-3">
+                                        <input class="form-check-input" type="checkbox" id="displayDuplicates" checked>
+                                        <label class="form-check-label" for="displayDuplicates">Display
+                                            duplicates</label>
+                                    </div>
+
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="spinSlowly">
+                                        <label class="form-check-label" for="spinSlowly">Spin slowly</label>
+                                    </div>
+
+                                    <label class="form-label mt-3">Spin time (seconds)</label>
+                                    <input type="range" class="form-range" min="1" max="60" value="10">
+
+                                    <label class="form-label mt-3">Max number of names visible on the wheel</label>
+                                    <input type="range" class="form-range" min="4" max="1000" value="500">
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Cancel</button>
+                                    <button type="button" class="btn btn-primary">OK</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-file"></i> New</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#openModal">
+                            <i class="fas fa-folder-open"></i> Open
+                        </a>
+                    </li>
+                    <!-- Open Modal -->
+                    <div class="modal fade" id="openModal" tabindex="-1" aria-labelledby="openModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="openModalLabel">Log in</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body text-center">
+                                    <p>Please choose your sign-in method below.</p>
+                                    <button class="btn btn-light w-100 my-2"><i class="fab fa-google"></i> Sign in with
+                                        Google</button>
+                                    <button class="btn btn-primary w-100 my-2"><i class="fab fa-twitter"></i> Sign in
+                                        with Twitter</button>
+                                    <button class="btn btn-danger w-100 my-2"><i class="fas fa-envelope"></i> Sign in
+                                        with email</button>
+                                    <small class="d-block mt-3">By continuing, you are indicating that you accept our <a
+                                            href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</small>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Cancel</button>
+                                    <button type="button" class="btn btn-dark">Open a local file instead</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-save"></i> Save</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#shareModal">
+                            <i class="fas fa-share-alt"></i> Share
+                        </a>
+                    </li>
+                    <!-- Share Modal -->
+                    <div class="modal fade" id="shareModal" tabindex="-1" aria-labelledby="shareModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content" style="background-color: #1e1e1e; color: white;">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="shareModalLabel">Shareable link</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>If you continue, you will create a public link to your current wheel, including
+                                        its names, colors, and settings.</p>
+                                    <p>This link will work for anyone and you can share it by email, website, social
+                                        media, etc. Unused links will be deleted after 365 days.</p>
+                                    <p>We want this website to be a safe place for everyone. Wheels that aren’t
+                                        family-friendly and that violate the terms of service will be deleted.</p>
+                                    <a href="#" class="text-primary">Terms & conditions</a>
+                                    <br>
+                                    <button class="btn btn-primary w-100 my-2">See my shared wheels</button>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Cancel</button>
+                                    <button type="button" class="btn btn-primary">Continue</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-image"></i> Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" id="fullscreen-btn"><i
+                                class="fas fa-expand"></i></a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="moreDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            More
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="moreDropdown">
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-comment-alt"></i> Feedback</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-question-circle"></i> FAQ</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-moon"></i> Dark mode</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-file-import"></i> Import Google
+                                    spreadsheet</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-user"></i> My account</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fas fa-globe" data-bs-toggle="modal"
+                                data-bs-target="#languageModal"></i> English</a>
+                    </li>
+                    <!-- Language Modal -->
+                    <div class="modal fade" id="languageModal" tabindex="-1" aria-labelledby="languageModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                            <div class="modal-content bg-dark text-light">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="languageModalLabel"><i class="fas fa-globe"></i>
+                                        Language</h5>
+                                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <h6>Suggested languages</h6>
+                                    <p>English | <span>پنجابی</span> | <span>سِندی</span> | <span>اردو</span></p>
+
+                                    <h6>All languages</h6>
+                                    <input type="text" class="form-control bg-secondary text-light my-2"
+                                        placeholder="Search">
+
+                                    <div class="row">
+                                        <div class="col-4">Azerbaycanca</div>
+                                        <div class="col-4">Bahasa Indonesia</div>
+                                        <div class="col-4">Bahasa Melayu</div>
+                                        <div class="col-4">Bosanski</div>
+                                        <div class="col-4">Català</div>
+                                        <div class="col-4">Čeština</div>
+                                        <div class="col-4">Cymraeg</div>
+                                        <div class="col-4">Dansk</div>
+                                        <div class="col-4">Deutsch</div>
+                                        <div class="col-4">English</div>
+                                        <div class="col-4">English (Pirate)</div>
+                                        <div class="col-4">Español</div>
+                                        <div class="col-4">Estonian</div>
+                                        <div class="col-4">Ελληνικά</div>
+                                        <div class="col-4">Filipino</div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div id="app">
+        <div class="wheel">
+          <div class="inner">
+            <div class="slice" v-for="prize in prizes" :key="prize">
+              <span class="prize">{{prize}}</span>
+            </div>
+          </div>
+        </div>
+        <div class="wheel-outer"></div>
+          <svg id="svg-dotted" viewBox="0 0 100 100">
+            <circle id="circle-dotted" cx="50" cy="50" r="40"/>
+          </svg>
+          <svg id="svg-arrow" xmlns="http://www.w3.org/2000/svg">
+            <path
+             style="fill:#ff2e52; stroke:#012e52; stroke-width:4; stroke-linejoin:round"
+              d="M 81.540414,49.378716 H 121.51935 L 101.4866,69.420346 Z"
+            />
+          </svg>
+          <button @click="spin" :disabled="activeBtn">SPIN</button>
+        </div>
+      </div>
+    <script src="js/scripts.js"></script>
+    <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+</body>
+
+</html>
