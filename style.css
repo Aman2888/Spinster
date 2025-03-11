@@ -30,3 +30,63 @@
 }
 
 /* Hero section */
+text{
+    font-family:Helvetica, Arial, sans-serif;
+    font-size:11px;
+    pointer-events:none;
+}
+#chart {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    min-height: 80vh; 
+    position: relative; 
+    overflow: visible; 
+}
+
+#drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100vh;
+    overflow-y: auto; 
+    background: white;
+    z-index: 1000;
+}
+
+ .tab-content {
+    max-height: calc(100vh - 120px); 
+    overflow-y: auto; 
+}
+.nav-tabs .nav-link {
+    background-color: transparent;
+    border: none;
+    color: white; 
+}
+
+.nav-tabs .nav-link.active {
+    background-color: transparent;
+    border: none;
+    color: white; 
+    border-bottom: 2px solid white; 
+}
+
+.nav-tabs .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1); 
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
